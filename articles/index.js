@@ -13,7 +13,7 @@ const getArticles = async () => {
   $('li.lx-stream__post-container', html).each(function () {
     const time = $('.qa-post-auto-meta', this).text();
     const title = $('h3 .lx-stream-post__header-text', this).text();
-    if (title.includes("If you're just joining us")) return;
+    if (title.includes("If you're just joining us") || title.includes("the latest")) return;
     const breaking = $('article.lx-stream-post--breaking', this).length;
     let body = [];
 
