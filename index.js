@@ -33,7 +33,7 @@ app.get('/news-latest', async (req, res) => {
 app.get('/summary', async (req, res) => {
   try {
     const response = await axios.get(
-      'https://www.bbc.co.uk/news/live/world-europe-60517447'
+      'https://www.bbc.co.uk/news/live/world-europe-60542877'
     );
     const html = response.data;
     const $ = cheerio.load(html);
