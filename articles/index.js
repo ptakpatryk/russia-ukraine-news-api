@@ -5,7 +5,8 @@ const getArticles = async () => {
   const articles = [];
 
   const response = await axios.get(
-    'https://www.bbc.co.uk/news/live/world-europe-60542877'
+    // 'https://www.bbc.co.uk/news/live/world-europe-60542877'
+    global._url
   );
   const html = response.data;
 
@@ -23,6 +24,11 @@ const getArticles = async () => {
     $('.lx-stream-post-body p', this).each(function () {
       body.push($(this).text());
     });
+
+    const link = $('.lx-stream-post-body a', this);
+    if(link.text().includes('follow us')) {
+      global._url = link.attr('href')
+    }
 
     let images = [];
 

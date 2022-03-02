@@ -5,6 +5,8 @@ const getArticles = require('./articles');
 
 const PORT = process.env.PORT || 3000;
 
+global._url = 'https://www.bbc.co.uk/news/live/world-europe-60542877'
+
 const app = express();
 
 app.get('/', (req, res) => {
@@ -33,7 +35,7 @@ app.get('/news-latest', async (req, res) => {
 app.get('/summary', async (req, res) => {
   try {
     const response = await axios.get(
-      'https://www.bbc.co.uk/news/live/world-europe-60542877'
+      global._url
     );
     const html = response.data;
     const $ = cheerio.load(html);
