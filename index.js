@@ -5,7 +5,7 @@ const getArticles = require('./articles');
 
 const PORT = process.env.PORT || 3000;
 
-global._url = 'https://www.bbc.co.uk/news/live/world-europe-60890199';
+global._url = 'https://www.bbc.co.uk/news/live/world-europe-60923158';
 
 const app = express();
 
