@@ -12,7 +12,7 @@ const app = express();
 app.get('/', (req, res) => {
   res.json('Welcome to my Climate Change News API');
 });
-console.log('test');
+
 app.get('/news', async (req, res) => {
   try {
     const articles = await getArticles();
